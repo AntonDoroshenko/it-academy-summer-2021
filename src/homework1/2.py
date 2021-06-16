@@ -1,2 +1,2 @@
 name = input('What is your name?\n')
-print ('Hi, %s.' % name)thretyteysdfa
+print('Hi, %s.' % name)

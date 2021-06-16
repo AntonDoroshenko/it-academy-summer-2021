@@ -1,4 +1,4 @@
-#Четвертая задача
+# Четвертая задача
 def backward_string(val: str) -> str:
     return val[::-1]
 
