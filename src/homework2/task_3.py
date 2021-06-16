@@ -7,7 +7,7 @@ print("Количество пробелов:", list.count(" "))
 # указываем что необходимо удалить.
 
 del_probel = list.replace(" ", "")
-print("Новая строка без пробелов  --->  ",  del_probel)
+print("Новая строка без пробелов  --->  ", del_probel)
 
 del_probel = ''
 for i in list:
