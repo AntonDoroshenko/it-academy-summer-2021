@@ -1,17 +1,7 @@
-
-print("Введите новую строку: ")
-list = input()
-
-print("Количество пробелов:", list.count(" "))
-
-# указываем что необходимо удалить.
-
+list = input('Введите строку: ')
 del_probel = list.replace(" ", "")
-print("Новая строка без пробелов  --->  ", del_probel)
-
-del_probel = ''
-for i in list:
-    if i not in del_probel and i != " ":
-        del_probel += i
-
-print(del_probel)
+short_list = ''
+for i in del_probel:
+    if i not in short_list:
+        short_list += i
+print(short_list)

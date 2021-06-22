@@ -1,10 +1,9 @@
-
-first_numb = second_numb = 1
-print('Введите число')
-n = int(input())
-
-print(first_numb, second_numb, end=' ')
-
-for i in range(2, n):
-    first_numb, second_numb = first_numb, first_numb + second_numb
-    print(second_numb, end=' ')
+number = int(input('Введите n-ое число: '))
+fib_1 = 0
+fib_2 = 1
+i = 1
+if i != number:
+    while i < number :
+        fib_1, fib_2 = fib_2, fib_1 + fib_2
+        i += 1
+print('Число Фибоначчи это ---> ', fib_1)
