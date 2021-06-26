@@ -2,9 +2,9 @@
 # которые встречаются в списке только один раз.
 # Элементы нужно выводить в том порядке,
 # в котором они встречаются в списке.
-new_lst = [1, 2, 3, 4, 5, 6, 6, 7, 2, 1, 23, 9, 12, 23]
-new_str = []
-for i in new_lst:
-    if i not in new_str:
-        new_str += [i]
-print(new_str)
+lst_num1 = [1, 2, 3, 4, 5, 6, 6, 7, 2, 1, 23, 9, 12, 23]
+lst_num2 = []
+for i in lst_num1:
+    if lst_num1.count(i) == 1:
+        lst_num2 += [i]
+print(lst_num2)
