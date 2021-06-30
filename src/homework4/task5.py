@@ -21,4 +21,4 @@ print('Все знают ---> ', list(popular_lang))
 lang_list = set(
     first_student) | set(second_student) | set(third_student)
 print(len(lang_list))
-print('Эти языки знает хотя бы один ученик ---> ',  list(lang_list))
+print('Эти языки знает хотя бы один ученик ---> ', list(lang_list))
