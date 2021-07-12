@@ -8,7 +8,7 @@ def max_del(number):
     degree = 1
     while number % 2**degree == 0:
         degree += 1
-    print(f'Максимальный делитеь к числу {number} ---> ', 2**(degree-1))
+    print(f'Максимальный делитеь к числу {number} ---> ', 2 ** (degree - 1))
 
 
 max_del(10)

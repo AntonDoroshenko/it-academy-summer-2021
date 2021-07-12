@@ -16,12 +16,12 @@ def my_decorator(multiply):
 
 @my_decorator
 def multiply(a, b):
-    return a*b
+    return a * b
 
 
 @my_decorator
 def qwer(a, b):
-    return a+b
+    return a + b
 
 
 multiply(2, 3)
