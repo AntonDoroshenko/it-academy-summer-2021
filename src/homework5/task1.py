@@ -25,7 +25,8 @@ def runner_a():
         price = (rub * 100 + penny) * count
         price_rub = price // 100
         price_pen = price % 100
-        print('Общая стоимость: ', str(price_rub) + ' руб.', str(price_pen) + ' коп.')
+        print('Общая стоимость: ', str(price_rub) + ' руб.',
+              str(price_pen) + ' коп.')
 
     my_func_2_1(3, 20, 3)
 
@@ -473,7 +474,8 @@ def my_func_2_1():
     price = (rub * 100 + penny) * count
     price_rub = price // 100
     price_pen = price % 100
-    print('Общая стоимость: ', str(price_rub) + ' руб.', str(price_pen) + ' коп.')
+    print('Общая стоимость: ', str(price_rub) + ' руб.',
+          str(price_pen) + ' коп.')
 
 
 def my_func_2_2():
