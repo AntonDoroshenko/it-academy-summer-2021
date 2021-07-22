@@ -370,7 +370,8 @@ def runner_a():
             dict_country_and_cities[str_country_and_cities[0]] = list_cities
         countries = ""
         for i in city_search:
-            for country, cities_of_the_country in dict_country_and_cities.items():
+            for country, cities_of_the_country in \
+                    dict_country_and_cities.items():
                 if i in cities_of_the_country:
                     countries += country + "\n"
         print(countries)
