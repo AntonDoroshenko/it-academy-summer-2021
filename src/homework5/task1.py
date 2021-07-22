@@ -339,8 +339,8 @@ def runner_a():
     dct_gen = {str(element): element ** 3 for element in range(21)}
     my_func_4_1(dct_gen)
 
-    def my_func_4_2(num_city):
-        """Города.
+    def my_func_4_2(list_country_and_cities=None, city_search=None):
+        """Города
 
         Дан список стран и городов каждой страны. Затем даны названия городов.
         Для каждого города укажите, в какой стране он находится.
@@ -354,20 +354,26 @@ def runner_a():
         Для каждого из запроса выведите название страны, в котором находится
         данный город.
 
-        """
-        dct = {}
-        for i in range(num_city):
-            info_ = input('Укажите страну и города: ').split()
-            country, cities = info_[0], info_[1:]
-            for city in cities:
-                dct[city] = country
-        num_check_city = int(
-            input('Введите количество городов для проверки: '))
-        for i in range(num_check_city):
-            print(dct[input('Введите город: ')])
-
-    num_city = int(input('Сколько стран будем вводить?: '))
-    my_func_4_2(num_city)
+           """
+        if city_search is None:
+            city_search = ["Minsk", "Odessa"]
+        if list_country_and_cities is None:
+            list_country_and_cities = [
+                "Bel Minsk Baranovichi",
+                "Ukraine Kiev Odessa"]
+        dict_country_and_cities = {}
+        for str_country_and_cities in list_country_and_cities:
+            list_cities = []
+            str_country_and_cities = str_country_and_cities.split()
+            for cities_of_the_country in str_country_and_cities[1:]:
+                list_cities.append(cities_of_the_country)
+            dict_country_and_cities[str_country_and_cities[0]] = list_cities
+        countries = ""
+        for i in city_search:
+            for country, cities_of_the_country in dict_country_and_cities.items():
+                if i in cities_of_the_country:
+                    countries += country + "\n"
+        print(countries)
 
     def my_func_4_3(list_1, list_2):
         """Даны два списка чисел.
@@ -399,7 +405,7 @@ def runner_a():
     list_2 = ([3, 4, 57, 4, 56, 3, 2, 2, 6, 3, 4])
     my_func_4_4(list_1, list_2)
 
-    def my_func_5_5(first_student, second_student, third_student):
+    def my_func_4_5(first_student, second_student, third_student):
         """Языки.
 
         Каждый из N школьников некоторой школы знает Mi языков.
@@ -419,7 +425,7 @@ def runner_a():
     first_student = ['Rus', 'Bel']
     second_student = ['Rus', 'Bel', 'Eng']
     third_student = ['Rus', 'Itl', 'Fr']
-    my_func_5_5(first_student, second_student, third_student)
+    my_func_4_5(first_student, second_student, third_student)
 
     def my_func_4_6(text):
         """Слова.
@@ -780,33 +786,41 @@ def my_func_4_1():
     print(dct_gen, type(dct_gen))
 
 
-def my_func_4_2():
-    """Города.
+def my_func_4_2(list_country_and_cities=None, city_search=None):
+    """Города
 
     Дан список стран и городов каждой страны. Затем даны названия городов.
     Для каждого города укажите, в какой стране он находится.
     Входные данные:
-    Программа получает на вход количество стран N. Далее идет N строк, каждая
-    строка начинается с названия страны, затем идут названия городов этой
-    страны.
+    Программа получает на вход количество стран N. Далее идет N строк,
+    каждая строка начинается с названия страны, затем идут названия городов
+    этой страны.
     В следующей строке записано число M, далее идут M запросов — названия
     каких-то M городов, перечисленных выше.
     Выходные данные:
     Для каждого из запроса выведите название страны, в котором находится
     данный город.
 
-    """
-    num_city = int(input('Сколько стран будем вводить?: '))
-    dct = {}
-    for i in range(num_city):
-        info_ = input('Укажите страну и города: ').split()
-        country, cities = info_[0], info_[1:]
-        for city in cities:
-            dct[city] = country
-    num_check_city = int(
-        input('Введите количество городов для проверки: '))
-    for i in range(num_check_city):
-        print(dct[input('Введите город: ')])
+       """
+    if city_search is None:
+        city_search = ["Minsk", "Odessa"]
+    if list_country_and_cities is None:
+        list_country_and_cities = [
+            "Bel Minsk Baranovichi",
+            "Ukraine Kiev Odessa"]
+    dict_country_and_cities = {}
+    for str_country_and_cities in list_country_and_cities:
+        list_cities = []
+        str_country_and_cities = str_country_and_cities.split()
+        for cities_of_the_country in str_country_and_cities[1:]:
+            list_cities.append(cities_of_the_country)
+        dict_country_and_cities[str_country_and_cities[0]] = list_cities
+    countries = ""
+    for i in city_search:
+        for country, cities_of_the_country in dict_country_and_cities.items():
+            if i in cities_of_the_country:
+                countries += country + "\n"
+    print(countries)
 
 
 def my_func_4_3():
