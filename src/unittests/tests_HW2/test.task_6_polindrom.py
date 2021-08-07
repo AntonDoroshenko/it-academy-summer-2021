@@ -1,6 +1,6 @@
+import ddt
 import task_6_polindrom
 import unittest
-import ddt
 
 
 @ddt.ddt

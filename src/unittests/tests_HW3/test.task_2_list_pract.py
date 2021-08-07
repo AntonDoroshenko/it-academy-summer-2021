@@ -23,7 +23,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_equal(self, l_1, l_2, excepted):
-        """Проверка положительного результата при выполнении условия программы"""
+        """Положительный результат при выполнении условия программы"""
         res = self.list_pr.first_lst(l_1, l_2)
         self.assertEqual(res, excepted)
 
@@ -32,7 +32,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_goal(self, l_1, excepted):
-        """Проверка положительного результата при выполнении условия программы"""
+        """Положительный результат при выполнении условия программы"""
         res = self.list_pr.second_lst(l_1)
         self.assertEqual(res, excepted)
 
@@ -41,7 +41,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_num_and_let_list(self, l_1, l_2, excepted):
-        """Проверка положительного результата при выполнении условия программы"""
+        """Положительный результат при выполнении условия программы"""
         res = self.list_pr.numb_lst(l_1, l_2)
         self.assertEqual(res, excepted)
 
@@ -59,7 +59,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_final_goal(self, l_1, excepted):
-        """Проверка положительного результата при выполнении условия программы"""
+        """Положительный результат при выполнении условия программы"""
         res = self.list_pr.final_lst(l_1)
         self.assertEqual(res, excepted)
 

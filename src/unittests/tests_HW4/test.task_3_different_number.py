@@ -1,6 +1,6 @@
+import ddt
 import task_3_different_number
 import unittest
-import ddt
 
 
 @ddt.ddt

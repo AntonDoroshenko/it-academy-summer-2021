@@ -1,5 +1,5 @@
-import task_2_cities_and_country
 import ddt
+import task_2_cities_and_country
 import unittest
 
 
@@ -42,7 +42,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_cities(self, city_list, exept_country):
-        """Положительный результат выполнения программы с несколькими данными"""
+        """Положительный результат выполнения программы (несколько данных)"""
         res = task_2_cities_and_country.my_func_4_2(city_list)
         self.assertEqual(exept_country, res)
 

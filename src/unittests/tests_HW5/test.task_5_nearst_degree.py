@@ -1,6 +1,6 @@
+import ddt
 import task_5_nearst_degree
 import unittest
-import ddt
 
 
 @ddt.ddt

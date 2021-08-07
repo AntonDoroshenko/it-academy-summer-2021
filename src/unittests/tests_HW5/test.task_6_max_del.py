@@ -1,6 +1,6 @@
+import ddt
 import task_6_max_del
 import unittest
-import ddt
 
 
 @ddt.ddt
@@ -42,18 +42,18 @@ class TestCase(unittest.TestCase):
         (12, 4),
     )
     @ddt.unpack
-    def test_not_equal(self, num, expected):
+    def test_true(self, num, expected):
         """Логическое подтверждение выполнения программы"""
         res = task_6_max_del.max_del(num)
-        self.assertTrue(res == expected)
+        self.assertTrue(res, expected)
 
     @ddt.data(
-        (10, 4),
-        (16, 2),
-        (12, 2),
+        (10, 23),
+        (16, 43),
+        (12, 8),
     )
     @ddt.unpack
-    def test_not_equal(self, num, expected):
+    def test_false(self, num, expected):
         """Отрицательный результат выполнения программы"""
         res = task_6_max_del.max_del(num)
         self.assertNotEqual(res, expected)
