@@ -1,6 +1,6 @@
+import ddt
 from task_2_list_pract import My_Func_3_2
 import unittest
-import ddt
 
 
 @ddt.ddt

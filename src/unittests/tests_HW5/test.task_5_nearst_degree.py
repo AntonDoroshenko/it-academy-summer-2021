@@ -91,7 +91,7 @@ class TestCase(unittest.TestCase):
         (13, 8),
     )
     @ddt.unpack
-    def test_not_equal(self, num, expected):
+    def test_false(self, num, expected):
         """Логическое подтверждение невыполнения программы"""
         res = task_5_nearst_degree.nearest_degree(num)
         self.assertFalse(res == expected)

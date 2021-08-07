@@ -30,7 +30,7 @@ class TestCase(unittest.TestCase):
     def test_for_test_two(self, input_num, expected):
         """Проверка входящих данных"""
         with self.assertRaises(expected):
-            task = task4.Problem(input_num)
+            task4.Problem(input_num)
 
 
 if __name__ == '__main__':
