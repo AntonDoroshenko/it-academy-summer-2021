@@ -44,7 +44,7 @@ class Problem:
             return 0
         x = (self._hensel_lemma(x0, n, p) + 3) * ((p ** 2 + 1) // 2) % (p ** 2)
         y = (self._hensel_lemma(p - x0, n, p) + 3) * ((p ** 2 + 1) // 2) % (
-                    p ** 2)
+            p ** 2)
         return min(x, y)
 
     def _cipolla_algorithm(self, n, p):
@@ -56,8 +56,7 @@ class Problem:
 
     def _hensel_lemma(self, x, n, p):
         return (x * ((p ** 2 + 1) // 2) + n * self._mod_inverse(2 * x,
-                                                                p ** 2)) % (
-                           p ** 2)
+                p ** 2)) % (p ** 2)
 
     def _cipolla_algorithm_find_a(self, n, p):
         for a in range(p):

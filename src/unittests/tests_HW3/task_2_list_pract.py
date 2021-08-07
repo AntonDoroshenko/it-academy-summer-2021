@@ -21,7 +21,7 @@ class My_Func_3_2:
         return fir_lst
 
     def second_lst(self, fir_lst):
-        """ fir_lst = ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'] """
+        """fir_lst = ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'] """
         sec_lst = fir_lst[::2]
         print(sec_lst)
         return sec_lst
@@ -32,7 +32,7 @@ class My_Func_3_2:
         return numb_lst
 
     def final_lst(self, numb_lst):
-        """ numb_lst = ['1a', '3a', '4a'] """
+        """numb_lst = ['1a', '3a', '4a'] """
         final_lst = numb_lst.copy()
         final_lst.insert(1, '2a')
         print(final_lst)

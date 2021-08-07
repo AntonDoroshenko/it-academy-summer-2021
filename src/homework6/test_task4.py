@@ -1,5 +1,5 @@
-import task4
 import ddt
+import task4
 import unittest
 
 
@@ -31,7 +31,6 @@ class TestCase(unittest.TestCase):
         """Проверка входящих данных"""
         with self.assertRaises(expected):
             task = task4.Problem(input_num)
-            result = task.solve()
 
 
 if __name__ == '__main__':

@@ -15,9 +15,10 @@ def my_func_4_2(city_search):
 
        """
     list_country_and_cities = [
-            "Belarus Minsk Baranovichi",
-            "Ukraine Kiev Odessa",
-            "Russia Moscow St.Petersburg"]
+        "Belarus Minsk Baranovichi",
+        "Ukraine Kiev Odessa",
+        "Russia Moscow St.Petersburg"
+    ]
     dict_country_and_cities = {}
     for str_country_and_cities in list_country_and_cities:
         list_cities = []

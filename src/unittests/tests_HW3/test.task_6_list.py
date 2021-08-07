@@ -41,7 +41,7 @@ class TestCase(unittest.TestCase):
     def test_list_find_num(self, list):
         """Проверка наличия указанного значения"""
         res = task_6_list.my_func_3_6(list)
-        self.assertIn(4, list)
+        self.assertIn(4, res)
 
 
 if __name__ == '__main__':
