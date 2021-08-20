@@ -1,5 +1,5 @@
 import ddt
-import task_5_fibonachi
+import task_5
 import unittest
 
 
@@ -18,23 +18,22 @@ class TestCase(unittest.TestCase):
         (5, 3),
         (1, 0),
         (12, 89),
-        (100, 218922995834555169026),
     )
     @ddt.unpack
     def test_fib_num_positive(self, number, expect_res):
         """проверка на положительный результат выполнения программы"""
-        res = task_5_fibonachi.my_func_2_5(number)
+        res = task_5.my_func_2_5(number)
         self.assertEqual(res, expect_res)
 
     @ddt.data(
         (5, 5),
         (12, 12),
-        (17, 15)
+        (17, 15),
     )
     @ddt.unpack
     def test_fib_num_negative(self, number, expect_res):
         """проверка на отрицательный результат выполнения программы"""
-        res = task_5_fibonachi.my_func_2_5(number)
+        res = task_5.my_func_2_5(number)
         self.assertNotEqual(res, expect_res)
 
     @ddt.data(
@@ -42,19 +41,20 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_fib_num_type(self, number, expect_res):
-        """проводит сравнение рещзультата программы с заданным числом"""
-        res = task_5_fibonachi.my_func_2_5(number)
+        """проводит сравнение результата программы с заданным числом"""
+        res = task_5.my_func_2_5(number)
         self.assertGreater(res, expect_res, True)
 
     @ddt.data(
         ('string', TypeError),
         ({122}, TypeError),
+        (None, TypeError),
     )
     @ddt.unpack
     def test_type_errors(self, word, expected):
         """проверка входящих данных"""
         with self.assertRaises(expected):
-            task_5_fibonachi.my_func_2_5(word)
+            task_5.my_func_2_5(word)
 
 
 if __name__ == '__main__':

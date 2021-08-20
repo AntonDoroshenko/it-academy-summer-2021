@@ -1,5 +1,5 @@
 import ddt
-import task_6_list
+import task_6
 import unittest
 
 
@@ -21,7 +21,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_list_count_equal(self, inp_list, compare_list):
         """Проверка наличия одинаковых элементов"""
-        res = task_6_list.my_func_3_6(inp_list)
+        res = task_6.my_func_3_6(inp_list)
         self.assertCountEqual(res, compare_list)
 
     @ddt.data(
@@ -31,7 +31,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_list_positive(self, inp_list, compare_list):
         """Проверка положительного выполнения программы"""
-        res = task_6_list.my_func_3_6(inp_list)
+        res = task_6.my_func_3_6(inp_list)
         self.assertEqual(res, compare_list)
 
     @ddt.data(
@@ -40,7 +40,7 @@ class TestCase(unittest.TestCase):
     )
     def test_list_find_num(self, list):
         """Проверка наличия указанного значения"""
-        res = task_6_list.my_func_3_6(list)
+        res = task_6.my_func_3_6(list)
         self.assertIn(4, res)
 
 

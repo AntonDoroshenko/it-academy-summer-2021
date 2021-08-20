@@ -1,5 +1,5 @@
 import ddt
-from task_2_list_pract import My_Func_3_2
+from task_2 import My_Func_3_2
 import unittest
 
 
@@ -15,7 +15,7 @@ class TestCase(unittest.TestCase):
     """
 
     def setUp(self):
-        """Вызываем проверяемую функцию"""
+        """Вызываем экземпляр проверяемого класса"""
         self.list_pr = My_Func_3_2()
 
     @ddt.data(

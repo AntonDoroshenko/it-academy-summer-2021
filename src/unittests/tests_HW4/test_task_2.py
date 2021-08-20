@@ -1,5 +1,5 @@
 import ddt
-import task_2_cities_and_country
+import task_2
 import unittest
 
 
@@ -22,7 +22,7 @@ class TestCase(unittest.TestCase):
     def test_type_errors(self, empty_data, expected):
         """Проверка полученных данных"""
         with self.assertRaises(expected):
-            task_2_cities_and_country.my_func_4_2(empty_data)
+            task_2.my_func_4_2(empty_data)
 
     @ddt.data(
         (['Minsk'], 'Belarus\n'),
@@ -32,7 +32,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_city(self, city, exept_country):
         """Положительный результат выполнения программы"""
-        res = task_2_cities_and_country.my_func_4_2(city)
+        res = task_2.my_func_4_2(city)
         self.assertEqual(exept_country, res)
 
     @ddt.data(
@@ -43,7 +43,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_cities(self, city_list, exept_country):
         """Положительный результат выполнения программы (несколько данных)"""
-        res = task_2_cities_and_country.my_func_4_2(city_list)
+        res = task_2.my_func_4_2(city_list)
         self.assertEqual(exept_country, res)
 
     @ddt.data(
@@ -54,7 +54,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_cities_notEqual(self, city_list, exept_country):
         """Отрицательный результат выполнения программы"""
-        res = task_2_cities_and_country.my_func_4_2(city_list)
+        res = task_2.my_func_4_2(city_list)
         self.assertNotEqual(exept_country, res)
 
     @ddt.data(
@@ -65,7 +65,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_true(self, city, exept_country):
         """Логическое подтверждение выполнения программы"""
-        res = task_2_cities_and_country.my_func_4_2(city)
+        res = task_2.my_func_4_2(city)
         self.assertTrue(res == exept_country)
 
     @ddt.data(
@@ -76,7 +76,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_false(self, city, exept_country):
         """Логическое отрицание выполнения программы"""
-        res = task_2_cities_and_country.my_func_4_2(city)
+        res = task_2.my_func_4_2(city)
         self.assertFalse(res == exept_country)
 
 

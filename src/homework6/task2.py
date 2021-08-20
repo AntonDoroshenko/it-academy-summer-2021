@@ -1,3 +1,13 @@
+"""Создайте декоратор
+
+Создайте декоратор, который вызывает задекорированную функцию пока она
+не выполнится без исключений (но не более n раз - параметр декоратора).
+Если превышено количество попыток, должно быть возбуждено исключение типа
+TooManyErrors
+
+"""
+
+
 class TooManyErrors(Exception):
     """Описание исключения.
 
@@ -9,14 +19,6 @@ class TooManyErrors(Exception):
 
 
 def smart_decorator(num_iteration):
-    """Создайте декоратор
-
-    Создайте декоратор, который вызывает задекорированную функцию пока она
-    не выполнится без исключений (но не более n раз - параметр декоратора).
-    Если превышено количество попыток, должно быть возбуждено исключение типа
-    TooManyErrors
-
-    """
     def decorator(func):
         count = 0
 
@@ -27,7 +29,8 @@ def smart_decorator(num_iteration):
                     count = count + 1
                     return func(*args, **kwargs)
                 else:
-                    raise TooManyErrors('TooManyErrors')
+                    raise TooManyErrors('Превышено допустимое количество '
+                                        'запусков программы')
             except TooManyErrors as errors:
                 return errors
             except TypeError:

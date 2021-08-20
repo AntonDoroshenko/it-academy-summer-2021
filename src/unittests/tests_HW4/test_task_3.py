@@ -1,5 +1,5 @@
 import ddt
-import task_3_different_number
+import task_3
 import unittest
 
 
@@ -21,8 +21,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_equal(self, list_1, list_2, expected):
-        """Положительный результат выполнения программы"""
-        res = task_3_different_number.my_func_4_3(list_1, list_2)
+        res = task_3.my_func_4_3(list_1, list_2)
         self.assertEqual(res, expected)
 
     @ddt.data(
@@ -32,8 +31,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_not_equal(self, list_1, list_2, expected):
-        """Отрицательный результат выполнения программы"""
-        res = task_3_different_number.my_func_4_3(list_1, list_2)
+        res = task_3.my_func_4_3(list_1, list_2)
         self.assertNotEqual(res, expected)
 
     @ddt.data(
@@ -44,7 +42,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_greater(self, list_1, list_2, expected):
         """Проверка ожидания количества полученных значений"""
-        res = task_3_different_number.my_func_4_3(list_1, list_2)
+        res = task_3.my_func_4_3(list_1, list_2)
         self.assertGreater(res, expected)
 
     @ddt.data(
@@ -55,7 +53,7 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_less(self, list_1, list_2, expected):
         """Проверка ожидания количества полученных значений"""
-        res = task_3_different_number.my_func_4_3(list_1, list_2)
+        res = task_3.my_func_4_3(list_1, list_2)
         self.assertLess(res, expected)
 
     @ddt.data(
@@ -75,7 +73,7 @@ class TestCase(unittest.TestCase):
     def test_type_errors(self, list_1, list_2, expected):
         """Проверка ввода данных"""
         with self.assertRaises(expected):
-            task_3_different_number.my_func_4_3(list_1, list_2)
+            task_3.my_func_4_3(list_1, list_2)
 
 
 if __name__ == '__main__':

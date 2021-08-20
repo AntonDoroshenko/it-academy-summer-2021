@@ -1,5 +1,5 @@
 import ddt
-import task_5_nearst_degree
+import task_5
 import unittest
 
 
@@ -21,8 +21,7 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_equal(self, num, expected):
-        """Положительный результат выполнения программы"""
-        res = task_5_nearst_degree.nearest_degree(num)
+        res = task_5.nearest_degree(num)
         self.assertEqual(res, expected)
 
     @ddt.data(
@@ -33,8 +32,8 @@ class TestCase(unittest.TestCase):
     )
     @ddt.unpack
     def test_not_equal(self, num, expected):
-        """Отрицательный результат выполнения программы"""
-        res = task_5_nearst_degree.nearest_degree(num)
+
+        res = task_5.nearest_degree(num)
         self.assertNotEqual(res, expected)
 
     @ddt.data(
@@ -46,20 +45,8 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_greater(self, num, expected):
         """Проверка - результат больше заданного значения"""
-        res = task_5_nearst_degree.nearest_degree(num)
+        res = task_5.nearest_degree(num)
         self.assertGreater(res, expected)
-
-    @ddt.data(
-        (30, 35),
-        (20, 34),
-        (10, 20),
-        (45, 75),
-    )
-    @ddt.unpack
-    def test_less(self, num, expected):
-        """Проверка - результат меньше указанного значения"""
-        res = task_5_nearst_degree.nearest_degree(num)
-        self.assertLess(res, expected)
 
     @ddt.data(
         ('string', TypeError),
@@ -71,7 +58,7 @@ class TestCase(unittest.TestCase):
     def test_type_errors(self, num, expected):
         """Проверка входящих данных"""
         with self.assertRaises(expected):
-            task_5_nearst_degree.nearest_degree(num)
+            task_5.nearest_degree(num)
 
     @ddt.data(
         (10, 8),
@@ -82,19 +69,8 @@ class TestCase(unittest.TestCase):
     @ddt.unpack
     def test_true(self, num, expected):
         """Логическое подтверждение выполнения программы"""
-        res = task_5_nearst_degree.nearest_degree(num)
+        res = task_5.nearest_degree(num)
         self.assertTrue(res == expected)
-
-    @ddt.data(
-        (10, 16),
-        (20, 32),
-        (13, 8),
-    )
-    @ddt.unpack
-    def test_false(self, num, expected):
-        """Логическое подтверждение невыполнения программы"""
-        res = task_5_nearst_degree.nearest_degree(num)
-        self.assertFalse(res == expected)
 
 
 if __name__ == '__main__':

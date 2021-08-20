@@ -1,26 +1,34 @@
-class Game_person:
-    """Создайте  модель из жизни.
+import random
+"""
+Создайте  модель из жизни.
 
-     Это может быть бронирование комнаты в отеле,
-     покупка билета в транспортной компании, или простая РПГ. Создайте
-     несколько объектов классов, которые описывают ситуацию.
-     Объекты должны содержать как атрибуты так и методы класса для симуляции
-     различных действий.
+Это может быть бронирование комнаты в отеле,
+покупка билета в транспортной компании, или простая РПГ. Создайте
+несколько объектов классов, которые описывают ситуацию.
+Объекты должны содержать как атрибуты так и методы класса для симуляции
+различных действий.
 
-     В результате хотел реализовать небольшую игровую модель где имеются
-     персонажи со своими особенностями.
+В результате хотел реализовать небольшую игровую модель где имеются
+персонажи со своими особенностями.
 
-     """
+"""
+
+
+class GamePerson:
     def __init__(self, person_name, armor_strength, health_points):
         self.person_name = person_name
         self.armor_strength = armor_strength
         self.health_points = health_points
 
     def introduce_game_persons(self):
-        print(f'Толпа приветствует {self.person_name}!')
+        text_1 = (f'Толпа приветствует {self.person_name}!',
+                  f'Приветствуйте {self.person_name}! ',
+                  f'Народ сгорает от нетерпения увидеть {self.person_name}')
+        announcement = random.choice(text_1)
+        print(announcement)
 
 
-class Good_character(Game_person):
+class GoodCharacter(GamePerson):
     def __init__(self, person_name, armor_strength, health_points):
         super().__init__(person_name, armor_strength, health_points)
 
@@ -32,7 +40,7 @@ class Good_character(Game_person):
               f'соответсвенно')
 
 
-class Master(Game_person):
+class Master(GamePerson):
     def __init__(self, person_name, armor_strength, health_points):
         super().__init__(person_name, armor_strength, health_points)
 
@@ -40,7 +48,7 @@ class Master(Game_person):
         print(f'Против нашего героя будет биться {self.person_name}!!!')
 
 
-class Weapon_Good_character(Good_character):
+class Weapon(GoodCharacter):
     def __init__(self, person_name, armor_strength, health_points, sword,
                  type_sword, sword_material):
         super().__init__(person_name, armor_strength, health_points)
@@ -56,7 +64,7 @@ class Weapon_Good_character(Good_character):
               f' стремительно наносить точные и тяжелые удары противнику!')
 
 
-class Power_of_friendship(Good_character):
+class PowerFriendship(GoodCharacter):
     def __init__(self, person_name, armor_strength, health_points, old_friend):
         super().__init__(person_name, armor_strength, health_points)
         self.old_friend = old_friend
@@ -68,13 +76,13 @@ class Power_of_friendship(Good_character):
         print(f'По этой причине {self.person_name} не вышел на бой.')
 
 
-main_person_1 = Game_person('Короля Цинтры', 150, 350)
-main_person_2 = Game_person('Королеву Цинтры', 70, 750)
+main_person_1 = GamePerson('Короля Цинтры', 150, 350)
+main_person_2 = GamePerson('Королеву Цинтры', 70, 750)
 main_person_1.introduce_game_persons()
 main_person_2.introduce_game_persons()
 
 
-gc = Good_character('Геральт', 150, 350)
+gc = GoodCharacter('Геральт', 150, 350)
 gc.introduce_game_persons()
 
 
@@ -82,9 +90,8 @@ bg = Master('Весемир', 70, 750)
 bg.introduce_game_persons()
 
 
-wgc = Weapon_Good_character('Геральт', 150, 350, 100, 'одноручный',
-                            'валерийская сталь')
+wgc = Weapon('Геральт', 150, 350, 100, 'одноручный', 'валерийская сталь')
 wgc.weapon_good_character()
 
-pof = Power_of_friendship('Геральт', 150, 350, 'Лютик')
+pof = PowerFriendship('Геральт', 150, 350, 'Лютик')
 pof.mystery_of_the_battle()

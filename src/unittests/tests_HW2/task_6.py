@@ -18,10 +18,7 @@ def my_func_2_6(n1):
         n2 = n2 * 10
         # добавляем очередную цифру
         n2 = n2 + digit
-    print('"Обратное" ему число:', n2)
     if b == n2:
-        print('Палиндром')
+        return True
     else:
-        print('Не палиндром')
-
-    return n2
+        return False
